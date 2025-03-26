@@ -2,6 +2,7 @@ package Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,6 +44,11 @@ public class FlightControllerTest {
         SeatDB_interface stdb = new MockSeatDB(l_s);
         FlightDB_interface fdb = new MockFlightDB(l_fl);
         fl_contr = new FlightController(l_fl, l_s, fdb, stdb);
+    }
+
+    @AfterEach
+    public void clear() {
+        fl_contr = null;
     }
 
     @Test
