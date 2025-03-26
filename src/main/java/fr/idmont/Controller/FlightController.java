@@ -60,4 +60,12 @@ public class FlightController {
     public List<Seat> getSeats() {
         return seats;
     }
+
+    public FlightDB_interface getFlightDB() {
+        return flightDB;
+    }
+
+    public SeatDB_interface getSeatDB() {
+        return seatDB;
+    }
 }

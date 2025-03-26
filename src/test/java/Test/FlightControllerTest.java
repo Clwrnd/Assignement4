@@ -1,6 +1,7 @@
 package Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -54,6 +55,9 @@ public class FlightControllerTest {
     @Test
     public void constructorTest() {
         assertEquals(40, fl_contr.getSeats().size());
+        assertEquals(4, fl_contr.getFlights().size());
+        assertNotNull(fl_contr.getSeatDB());
+        assertNotNull(fl_contr.getFlightDB());
     }
 
     @Test
