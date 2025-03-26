@@ -30,7 +30,7 @@ public class FlightControllerTest {
         List<Flight> l_fl = new ArrayList<>();
         l_fl.add(new Flight(0, 3747, "F6", "Paris", "London", "", "", 0.0, 1, 9.0));
         l_fl.add(new Flight(1, 34774, "F6", "Paris", "Milan", "", "", 0.0, 1, 9.0));
-        l_fl.add(new Flight(2, 364644, "F6", "Paris", "Saint Denis", "", "", 0.0, 1, 9.0));
+        l_fl.add(new Flight(2, 364644, "notF6", "Paris", "Saint Denis", "", "", 0.0, 1, 9.0));
         l_fl.add(new Flight(3, 273737, "F6", "Paris", "Madrid", "", "", 0.0, 1, 9.0));
 
         List<Seat> l_s = new ArrayList<>();
@@ -83,8 +83,18 @@ public class FlightControllerTest {
     }
 
     @Test
-    public void getFlightTest() {
-        assertEquals(1, fl_contr.getFlight("Madrid").size());
+    public void getFlightTestByDest() {
+        assertEquals(1, fl_contr.getFlightByDest("Madrid").size());
+    }
+
+    @Test
+    public void getFlightTestByDestAndDep() {
+        assertEquals(1, fl_contr.getFlightByDestAndDep("Madrid", "Paris").size());
+    }
+
+    @Test
+    public void getFlightTestByAirline() {
+        assertEquals(3, fl_contr.getFlightByAirline("F6").size());
     }
 
     @Test

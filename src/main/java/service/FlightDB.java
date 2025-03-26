@@ -15,7 +15,17 @@ public class FlightDB implements FlightDB_interface {
     }
 
     @Override
-    public List<Flight> selectFlight(String destination) {
+    public List<Flight> selectFlightByDest(String destination) {
+        return null;
+    }
+
+    @Override
+    public List<Flight> selectFlightByAirline(String airline) {
+        return null;
+    }
+
+    @Override
+    public List<Flight> selectFlightByDestAndDep(String destination, String departure) {
         return null;
     }
 

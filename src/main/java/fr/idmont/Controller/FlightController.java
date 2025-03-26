@@ -32,8 +32,16 @@ public class FlightController {
         this.flightDB.deleteFlight(flight);
     }
 
-    public List<Flight> getFlight(String flight_des) {
-        return this.flightDB.selectFlight(flight_des);
+    public List<Flight> getFlightByDest(String flight_des) {
+        return this.flightDB.selectFlightByDest(flight_des);
+    }
+
+    public List<Flight> getFlightByAirline(String airline) {
+        return this.flightDB.selectFlightByAirline(airline);
+    }
+
+    public List<Flight> getFlightByDestAndDep(String flight_des, String flight_dep) {
+        return this.flightDB.selectFlightByDestAndDep(flight_des, flight_dep);
     }
 
     // SEAT CONTROLLER

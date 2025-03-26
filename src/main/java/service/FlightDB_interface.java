@@ -9,6 +9,10 @@ public interface FlightDB_interface {
 
     public void deleteFlight(Flight seat);
 
-    public List<Flight> selectFlight(String destination);
+    public List<Flight> selectFlightByDest(String destination);
+
+    public List<Flight> selectFlightByDestAndDep(String destination, String departure);
+
+    public List<Flight> selectFlightByAirline(String airline);
 
 }
